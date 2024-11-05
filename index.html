@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Šolska Aplikacija</title>
+</head>
+<body>
+    <header>
+        <span class="menu-toggle">&#9776;</span>
+        <nav>
+            <a href="index.html">Domov</a>
+            <a href="login.html">Prijava</a>
+            <a href="register.html">Registracija</a>
+        </nav>
+    </header>
+    
+    <div class="main-container">
+        <h1 class="fade-in">Dobrodošli v Šolski Aplikaciji</h1>
+        <div class="button-group">
+            <button onclick="window.location.href='login.html'" class="login-button">Prijava</button>
+            <button onclick="window.location.href='register.html'" class="register-button">Registracija</button>
+        </div>
+    </div>
+</body>
+</html>

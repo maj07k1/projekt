@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Učiteljski Vmesnik</title>
+</head>
+<body>
+    <?php
+    session_start();
+    if ($_SESSION['role'] != 'ucitelj') {
+        header('Location: index.html');
+        exit;
+    }
+    ?>
+    <header>
+        <h1 class="fade-in">Učiteljski Vmesnik</h1>
+    </header>
+    <section>
+        <h2>Gradiva</h2>
+        <form action="upload_material.php" method="post" enctype="multipart/form-data">
+            <label for="naslov">Naslov gradiva:</label>
+            <input type="text" id="naslov" name="naslov" required>
+            <label for="file">Izberi datoteko:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit" class="upload-button">Naloži gradivo</button>
+        </form>
+    </section>
+</body>
+</html>

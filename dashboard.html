@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Nadzorna Plošča</title>
+</head>
+<body>
+    <header>
+        <h1>Nadzorna Plošča</h1>
+        <nav>
+            <?php
+            session_start();
+            if (!isset($_SESSION['id_vloga'])) {
+                header("Location: index.html");
+                exit();
+            }
+
+            $id_vloga = $_SESSION['id_vloga'];
+            if ($id_vloga == 1) {  // Administrator
+                echo '<a href="admin_dashboard.php">Administratorjev Vmesnik</a>';
+            }
+            if ($id_vloga == 2) {  // Učitelj
+                echo '<a href="teacher_dashboard.php">Učiteljski Vmesnik</a>';
+            }
+            if ($id_vloga == 3) {  // Učenec
+                echo '<a href="student_dashboard.php">Učenčev Vmesnik</a>';
+            }
+            ?>
+            <a href="logout.php" class="logout-btn">Odjava</a>
+        </nav>
+    </header>
+</body>
+</html>

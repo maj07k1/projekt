@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <title>Učenčev Vmesnik</title>
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">Učenčev Vmesnik</h1>
+    </header>
+    <section>
+        <h2>Oddaja Nalog</h2>
+        <form action="submit_assignment.php" method="post" enctype="multipart/form-data">
+            <label for="naslov">Naslov naloge:</label>
+            <input type="text" id="naslov" name="naslov" required>
+            <label for="file">Izberi datoteko:</label>
+            <input type="file" id="file" name="file" required>
+            <button type="submit" class="submit-button">Oddaj nalogo</button>
+        </form>
+    </section>
+</body>
+</html>
